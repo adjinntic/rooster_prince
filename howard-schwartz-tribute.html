@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Howard Schwartz: Guardian of Jewish Mythology</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300&family=David+Libre:wght@400;500&family=Philosopher:wght@400;700&family=Space+Mono:wght@400&display=swap');
+        
+        :root {
+            /* ShadowStar - The Primordial */
+            --void-absolute: #000000;
+            --star-pure: #FFFFFF;
+            
+            /* OnyxSerpentine - The Depths */
+            --onyx-void: #0A0A0A;
+            --onyx-deep: #1C1C1C;
+            --serpent-jade: #2F4F2F;
+            --serpent-silver: #C0C0C0;
+            
+            /* TwilightSapphire - The Bridge */
+            --twilight-deep: #1a2633;
+            --twilight-sapphire: #0047AB;
+            --twilight-electric: #4169E1;
+            --liminal-silver: #C0C8D0;
+            
+            /* AzureAurum - The Illumination */
+            --azure-deep: #003366;
+            --azure-royal: #0047AB;
+            --azure-sapphire: #0F52BA;
+            --aurum-pure: #FFD700;
+            --aurum-light: #FFF8DC;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--void-absolute);
+            color: var(--star-pure);
+            overflow-x: hidden;
+        }
+        
+        /* ShadowStar Opening - The Eternal */
+        .primordial-header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: var(--void-absolute);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .primordial-header::before {
+            content: 'אמת';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30vw;
+            opacity: 0.03;
+            font-family: 'David Libre', serif;
+            animation: breathe 8s ease-in-out infinite;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { opacity: 0.03; }
+            50% { opacity: 0.06; }
+        }
+        
+        .name-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            letter-spacing: 0.5rem;
+            margin-bottom: 1rem;
+            animation: whitefire 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @keyframes whitefire {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 10px rgba(255,255,255,0.9),
+                    0 0 20px rgba(255,255,255,0.5),
+                    0 0 40px rgba(255,255,255,0.3);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 20px rgba(255,255,255,1),
+                    0 0 40px rgba(255,255,255,0.7),
+                    0 0 80px rgba(255,255,255,0.5);
+            }
+        }
+        
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 300;
+            letter-spacing: 0.2rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .life-dates {
+            margin-top: 2rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 2s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        
+        /* OnyxSerpentine - The Collector Section */
+        .collector-section {
+            background: linear-gradient(180deg, var(--onyx-void) 0%, var(--onyx-deep) 100%);
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--serpent-jade);
+            margin-bottom: 3rem;
+            text-align: center;
+            text-shadow: 0 0 30px rgba(47, 79, 47, 0.5);
+        }
+        
+        .bio-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--serpent-silver);
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+        
+        .quote-block {
+            background: linear-gradient(135deg, var(--onyx-deep), var(--serpent-jade));
+            border-left: 4px solid var(--serpent-jade);
+            padding: 2rem;
+            margin: 3rem 0;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--serpent-silver);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        /* TwilightSapphire - The Collections Bridge */
+        .collections-section {
+            background: linear-gradient(180deg, var(--twilight-deep) 0%, var(--twilight-sapphire) 100%);
+            padding: 6rem 0;
+        }
+        
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .collection-card {
+            background: linear-gradient(135deg, var(--twilight-deep), var(--twilight-electric));
+            border: 1px solid var(--twilight-electric);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .collection-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                var(--twilight-electric),
+                transparent,
+                var(--twilight-sapphire));
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index: -1;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(65, 105, 225, 0.4);
+        }
+        
+        .collection-card:hover::before {
+            opacity: 0.5;
+        }
+        
+        .collection-title {
+            font-family: 'Philosopher', serif;
+            font-size: 1.4rem;
+            color: var(--liminal-silver);
+            margin-bottom: 0.5rem;
+        }
+        
+        .collection-year {
+            color: var(--twilight-electric);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .collection-description {
+            color: var(--liminal-silver);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .purchase-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .purchase-link {
+            background: rgba(65, 105, 225, 0.2);
+            color: var(--twilight-electric);
+            text-decoration: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid var(--twilight-electric);
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .purchase-link:hover {
+            background: var(--twilight-electric);
+            color: var(--void-absolute);
+            transform: scale(1.05);
+        }
+        
+        /* AzureAurum - The Masterwork */
+        .masterwork-section {
+            background: linear-gradient(135deg, 
+                var(--azure-deep) 0%,
+                var(--azure-royal) 50%,
+                var(--azure-sapphire) 100%);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .masterwork-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 215, 0, 0.1) 0%,
+                transparent 70%
+            );
+            animation: rotate 60s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .masterwork-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tree-of-souls {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid var(--aurum-pure);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 
+                0 20px 60px rgba(255, 215, 0, 0.3),
+                inset 0 0 60px rgba(255, 215, 0, 0.1);
+        }
+        
+        .tree-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--aurum-pure);
+            text-align: center;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px var(--aurum-pure);
+        }
+        
+        .tree-subtitle {
+            text-align: center;
+            color: var(--aurum-light);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .mythologies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .mythology-item {
+            background: rgba(0, 51, 102, 0.5);
+            padding: 1rem;
+            border-left: 3px solid var(--aurum-pure);
+            color: var(--aurum-light);
+            transition: all 0.3s;
+        }
+        
+        .mythology-item:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: translateX(10px);
+        }
+        
+        /* Children's Literature Section */
+        .children-section {
+            background: linear-gradient(180deg, var(--azure-sapphire) 0%, var(--azure-royal) 100%);
+            padding: 6rem 0;
+        }
+        
+        .children-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .children-book {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--aurum-pure);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .children-book:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+        }
+        
+        .award-badge {
+            display: inline-block;
+            background: var(--aurum-pure);
+            color: var(--azure-deep);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+        
+        /* Awards Section */
+        .awards-section {
+            background: linear-gradient(135deg, var(--twilight-deep), var(--azure-deep));
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .awards-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .award-item {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--aurum-pure);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            color: var(--aurum-light);
+            font-family: 'Philosopher', serif;
+        }
+        
+        /* Final Teaching */
+        .final-teaching {
+            background: var(--void-absolute);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .final-quote {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            line-height: 1.8;
+            color: var(--star-pure);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-style: italic;
+            animation: whitefire 4s ease-in-out infinite;
+        }
+        
+        .dedication {
+            color: var(--aurum-pure);
+            font-size: 1.1rem;
+            margin-top: 3rem;
+            opacity: 0.9;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .collections-grid,
+            .children-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mythologies-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ShadowStar: The Eternal Opening -->
+    <section class="primordial-header">
+        <h1 class="name-title">HOWARD SCHWARTZ</h1>
+        <p class="subtitle">Guardian of the Eternal Stories</p>
+        <p class="life-dates">Born April 21, 1945 • St. Louis, Missouri</p>
+        <div class="scroll-indicator">↓</div>
+    </section>
+    
+    <!-- OnyxSerpentine: The Depths of Collection -->
+    <section class="collector-section">
+        <div class="container">
+            <h2 class="section-title">The Collector of Ancient Wisdom</h2>
+            
+            <p class="bio-text">
+                Howard Schwartz stands as one of the most significant collectors and retellers of Jewish folklore in the modern era. 
+                A distinguished Professor Emeritus at the University of Missouri-St. Louis, Schwartz has dedicated his life to preserving 
+                and sharing the rich mythological and folkloric traditions of Judaism.
+            </p>
+            
+            <p class="bio-text">
+                Like a modern-day Elijah collecting wisdom across generations, Schwartz has become the guardian of nearly a thousand unique 
+                tales that might otherwise have been lost to time. His work spans the ancient Middle East to medieval Europe, from North African 
+                Jewish communities to Eastern European shtetls.
+            </p>
+            
+            <div class="quote-block">
+                "It is vital to pass on the love of the Jewish literary heritage to upcoming generations."
+                <br>— Howard Schwartz
+            </div>
+            
+            <p class="bio-text">
+                This mission has driven him to create more than thirty books, earning him prestigious awards and touching countless lives. 
+                From his home in St. Louis, the same city where he was born, Howard Schwartz continues to inspire new generations of 
+                storytellers and wisdom seekers.
+            </p>
+        </div>
+    </section>
+    
+    <!-- TwilightSapphire: The Bridge of Collections -->
+    <section class="collections-section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--liminal-silver);">The Four Pillars of Jewish Folklore</h2>
+            
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <h3 class="collection-title">Elijah's Violin</h3>
+                    <div class="collection-year">and Other Jewish Fairy Tales (1983)</div>
+                    <p class="collection-description">
+                        A treasury of thirty-six tales from around the world, from the mystical violin that holds 
+                        the power of music itself to tales of wise fools and magical transformations.
+                    </p>
+                    <div class="purchase-links">
+                        <a href="https://www.amazon.com/Elijahs-Violin-Other-Jewish-Fairy/dp/0195053532" class="purchase-link" target="_blank">Paperback $28.30</a>
+                        <a href="https://www.amazon.com/Elijahs-Violin-Other-Jewish-Fairy/dp/0195053532" class="purchase-link" target="_blank">Kindle $14.86</a>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <h3 class="collection-title">Miriam's Tambourine</h3>
+                    <div class="collection-year">Jewish Folktales from Around the World (1986)</div>
+                    <p class="collection-description">
+                        Named after the prophetess who led the women in celebration, this collection celebrates 
+                        the diversity of Jewish storytelling across cultures.
+                    </p>
+                    <div class="purchase-links">
+                        <a href="https://www.amazon.com/Miriams-Tambourine-Jewish-Folktales-Around/dp/0195053540" class="purchase-link" target="_blank">Paperback $25.80</a>
+                        <a href="https://www.amazon.com/Miriams-Tambourine-Jewish-Folktales-Around/dp/0195053540" class="purchase-link" target="_blank">Hardcover $39.95</a>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <h3 class="collection-title">Lilith's Cave</h3>
+                    <div class="collection-year">Jewish Tales of the Supernatural (1987)</div>
+                    <p class="collection-description">
+                        Fifty haunting tales exploring the supernatural elements of Jewish folklore, from Lilith 
+                        to wandering spirits and mystical transformations.
+                    </p>
+                    <div class="purchase-links">
+                        <a href="https://www.amazon.com/Liliths-Cave-Jewish-Tales-Supernatural/dp/0195093887" class="purchase-link" target="_blank">Paperback $25.75</a>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <h3 class="collection-title">Gabriel's Palace</h3>
+                    <div class="collection-year">Jewish Mystical Tales (1993)</div>
+                    <p class="collection-description">
+                        150 stories of divine encounters and heavenly journeys, drawn from Talmudic, Kabbalistic, 
+                        and Hasidic sources.
+                    </p>
+                    <div class="purchase-links">
+                        <a href="https://www.amazon.com/Gabriels-Palace-Jewish-Mystical-Tales/dp/0195093895" class="purchase-link" target="_blank">Paperback $29.89</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AzureAurum: The Masterwork -->
+    <section class="masterwork-section">
+        <div class="container masterwork-content">
+            <h2 class="section-title" style="color: var(--aurum-pure);">The Masterwork</h2>
+            
+            <div class="tree-of-souls">
+                <h3 class="tree-title">Tree of Souls</h3>
+                <p class="tree-subtitle">The Mythology of Judaism</p>
+                <p style="text-align: center; color: var(--aurum-light); margin-bottom: 2rem;">
+                    Winner of the 2005 National Jewish Book Award<br>
+                    700 pages • 12 years of research • Nearly 700 sources
+                </p>
+                
+                <div class="mythologies-grid">
+                    <div class="mythology-item">1. Myths of God</div>
+                    <div class="mythology-item">2. Myths of Creation</div>
+                    <div class="mythology-item">3. Myths of Heaven</div>
+                    <div class="mythology-item">4. Myths of Hell</div>
+                    <div class="mythology-item">5. Myths of the Holy Word</div>
+                    <div class="mythology-item">6. Myths of the Holy Time</div>
+                    <div class="mythology-item">7. Myths of the Holy People</div>
+                    <div class="mythology-item">8. Myths of the Holy Land</div>
+                    <div class="mythology-item">9. Myths of Exile</div>
+                    <div class="mythology-item">10. Myths of the Messiah</div>
+                </div>
+                
+                <div class="purchase-links" style="text-align: center; margin-top: 2rem;">
+                    <a href="https://www.amazon.com/Tree-Souls-Mythology-Judaism/dp/0195327136" class="purchase-link" target="_blank" style="background: rgba(255,215,0,0.2); color: var(--aurum-pure); border-color: var(--aurum-pure);">Paperback $29.49</a>
+                    <a href="https://www.amazon.com/Tree-Souls-Mythology-Judaism/dp/0195327136" class="purchase-link" target="_blank" style="background: rgba(255,215,0,0.2); color: var(--aurum-pure); border-color: var(--aurum-pure);">Kindle $13.19</a>
+                    <a href="https://www.amazon.com/Tree-Souls-Mythology-Judaism/dp/0195327136" class="purchase-link" target="_blank" style="background: rgba(255,215,0,0.2); color: var(--aurum-pure); border-color: var(--aurum-pure);">Hardcover $67.08</a>
+                </div>
+            </div>
+            
+            <div class="tree-of-souls" style="margin-top: 2rem;">
+                <h3 class="tree-title" style="font-size: 2rem;">Leaves from the Garden of Eden</h3>
+                <p class="tree-subtitle">One Hundred Classic Jewish Tales (2008)</p>
+                <p style="text-align: center; color: var(--aurum-light);">
+                    The best of the best, carefully curated from a lifetime of collection
+                </p>
+                <div class="purchase-links" style="text-align: center; margin-top: 2rem;">
+                    <a href="https://www.amazon.com/Leaves-Garden-Eden-Hundred-Classic/dp/0195327144" class="purchase-link" target="_blank" style="background: rgba(255,215,0,0.2); color: var(--aurum-pure); border-color: var(--aurum-pure);">Paperback $23.53</a>
+                    <a href="https://www.amazon.com/Leaves-Garden-Eden-Hundred-Classic/dp/0195327144" class="purchase-link" target="_blank" style="background: rgba(255,215,0,0.2); color: var(--aurum-pure); border-color: var(--aurum-pure);">Kindle $13.01</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Children's Literature -->
+    <section class="children-section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--aurum-light);">Nurturing Young Souls</h2>
+            
+            <div class="children-grid">
+                <div class="children-book">
+                    <h3 style="color: var(--aurum-pure);">The Diamond Tree</h3>
+                    <p style="color: var(--aurum-light);">Jewish Tales from Around the World</p>
+                    <div class="award-badge">Sydney Taylor Award Winner</div>
+                    <div class="purchase-links" style="justify-content: center; margin-top: 1rem;">
+                        <a href="https://www.amazon.com/Diamond-Tree-Jewish-Around-World/dp/0060252391" class="purchase-link" target="_blank">Get Book</a>
+                    </div>
+                </div>
+                
+                <div class="children-book">
+                    <h3 style="color: var(--aurum-pure);">Before You Were Born</h3>
+                    <p style="color: var(--aurum-light);">The angel Lailah's secrets</p>
+                    <div class="award-badge">Koret International Award</div>
+                    <div class="purchase-links" style="justify-content: center; margin-top: 1rem;">
+                        <a href="https://www.amazon.com/Before-You-Were-Born-Schwartz/dp/0060288825" class="purchase-link" target="_blank">Get Book</a>
+                    </div>
+                </div>
+                
+                <div class="children-book">
+                    <h3 style="color: var(--aurum-pure);">Next Year in Jerusalem</h3>
+                    <p style="color: var(--aurum-light);">3000 Years of Jewish Stories</p>
+                    <div class="award-badge">National Jewish Book Award</div>
+                    <div class="purchase-links" style="justify-content: center; margin-top: 1rem;">
+                        <a href="https://www.amazon.com/s?k=Next+Year+in+Jerusalem+Howard+Schwartz" class="purchase-link" target="_blank">Find Book</a>
+                    </div>
+                </div>
+                
+                <div class="children-book">
+                    <h3 style="color: var(--aurum-pure);">The Day the Rabbi Disappeared</h3>
+                    <p style="color: var(--aurum-light);">Jewish Holiday Tales of Magic</p>
+                    <div class="award-badge">National Jewish Book Award</div>
+                    <div class="purchase-links" style="justify-content: center; margin-top: 1rem;">
+                        <a href="https://www.amazon.com/s?k=The+Day+the+Rabbi+Disappeared+Schwartz" class="purchase-link" target="_blank">Find Book</a>
+                    </div>
+                </div>
+                
+                <div class="children-book">
+                    <h3 style="color: var(--aurum-pure);">Gathering Sparks</h3>
+                    <p style="color: var(--aurum-light);">A story of Tikkun Olam</p>
+                    <div class="award-badge">Sydney Taylor Award</div>
+                    <div class="purchase-links" style="justify-content: center; margin-top: 1rem;">
+                        <a href="https://www.amazon.com/Gathering-Sparks-Howard-Schwartz/dp/1596433469" class="purchase-link" target="_blank">Get Book</a>
+                    </div>
+                </div>
+                
+                <div class="children-book">
+                    <h3 style="color: var(--aurum-pure);">A Coat for the Moon</h3>
+                    <p style="color: var(--aurum-light);">And Other Jewish Tales</p>
+                    <div class="award-badge">Storyteller's Choice Award</div>
+                    <div class="purchase-links" style="justify-content: center; margin-top: 1rem;">
+                        <a href="https://www.amazon.com/Coat-Moon-Other-Jewish-Tales/dp/1596430931" class="purchase-link" target="_blank">$8.06</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Awards and Recognition -->
+    <section class="awards-section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--aurum-pure);">Awards & Recognition</h2>
+            <div class="awards-list">
+                <div class="award-item">Three-time National Jewish Book Award Winner</div>
+                <div class="award-item">Multiple Sydney Taylor Book Awards</div>
+                <div class="award-item">Koret International Jewish Book Award</div>
+                <div class="award-item">Aesop Prize - American Folklore Society</div>
+                <div class="award-item">American Book Award</div>
+                <div class="award-item">Six National Jewish Book Award Nominations</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ShadowStar: The Eternal Return -->
+    <section class="final-teaching">
+        <div class="container">
+            <p class="final-quote">
+                "Sometimes the soul must become a rooster to remember it has wings.<br>
+                Sometimes we must enter another's darkness to show them their light.<br>
+                The descent is not the opposite of ascent—it is its secret beginning."
+            </p>
+            <p style="color: var(--liminal-silver); font-style: italic; margin-top: 2rem;">
+                — A teaching preserved and honored by Howard Schwartz
+            </p>
+            <p class="dedication">
+                For Howard — who has spent his life ensuring that no story is forgotten,<br>
+                no wisdom lost, and no soul left without the nourishment<br>
+                of ancient tales beautifully retold.
+            </p>
+        </div>
+    </section>
+</body>
+</html>

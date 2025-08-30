@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Prince Who Thought He Was a Rooster - A Journey Through Light and Shadow</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=David+Libre:wght@400;500&display=swap');
+        
+        :root {
+            /* OnyxSerpentine palette */
+            --onyx-void: #0A0A0A;
+            --onyx-deep: #1C1C1C;
+            --onyx-medium: #2A2A2A;
+            --serpent-dark: #1A3A2E;
+            --serpent-jade: #2F4F2F;
+            --serpent-mercury: #708090;
+            --serpent-silver: #C0C0C0;
+            --serpent-glow: #00FF7F20;
+            
+            /* AzureAurum palette */
+            --azure-deep: #003366;
+            --azure-royal: #0047AB;
+            --azure-sapphire: #0F52BA;
+            --azure-celestial: #4169E1;
+            --aurum-pure: #FFD700;
+            --aurum-light: #FFF8DC;
+            --aurum-glow: #FFD70040;
+            
+            /* ShadowStar for attribution */
+            --void-absolute: #000000;
+            --star-pure: #FFFFFF;
+            
+            /* Transition states */
+            --current-bg-1: var(--onyx-void);
+            --current-bg-2: var(--onyx-deep);
+            --current-text: var(--serpent-silver);
+            --current-accent: var(--serpent-jade);
+            --current-glow: var(--serpent-glow);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            font-family: 'David Libre', 'Cormorant Garamond', serif;
+            color: var(--current-text);
+            overflow-x: hidden;
+            background: linear-gradient(180deg, var(--current-bg-1) 0%, var(--current-bg-2) 100%);
+            transition: all 2s ease-in-out;
+        }
+        
+        .scroll-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        /* Attribution Section in ShadowStar style */
+        .attribution-section {
+            background: var(--void-absolute);
+            color: var(--star-pure);
+            border: 1px solid var(--star-pure);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .attribution-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, 
+                rgba(255,255,255,0.05) 0%, 
+                transparent 70%);
+            animation: breathe 8s ease-in-out infinite;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .attribution-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .attribution-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.2rem;
+        }
+        
+        .attribution-details {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .attribution-details em {
+            font-style: italic;
+            color: var(--aurum-pure);
+        }
+        
+        .purchase-links {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .purchase-links a {
+            color: var(--azure-celestial);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        
+        .purchase-links a:hover {
+            color: var(--aurum-pure);
+            text-shadow: 0 0 10px var(--aurum-glow);
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            transition: all 1s ease;
+        }
+        
+        .hebrew-title {
+            font-size: 1.8rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+            font-family: 'David Libre', serif;
+        }
+        
+        .story-phase {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+            transition: all 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Phase 1: Full Darkness - OnyxSerpentine */
+        .phase-1 {
+            background: linear-gradient(135deg, var(--onyx-deep), var(--serpent-dark));
+            border: 1px solid var(--serpent-jade);
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.9),
+                inset 0 0 30px var(--serpent-glow);
+            color: var(--serpent-silver);
+            animation-delay: 0.5s;
+        }
+        
+        .phase-1 h2 {
+            color: var(--serpent-jade);
+            font-family: 'Cinzel', serif;
+            margin-bottom: 1rem;
+        }
+        
+        /* Phase 2: Recognition - Serpentine with hints of blue */
+        .phase-2 {
+            background: linear-gradient(135deg, 
+                var(--onyx-deep) 0%, 
+                var(--serpent-dark) 50%,
+                #001a33 100%);
+            border: 1px solid #2F4F5F;
+            box-shadow: 
+                0 5px 15px rgba(0, 20, 40, 0.7),
+                inset 0 0 30px rgba(0, 71, 171, 0.1);
+            color: #A0B0C0;
+            animation-delay: 1s;
+        }
+        
+        .phase-2 h2 {
+            background: linear-gradient(90deg, var(--serpent-jade), var(--azure-deep));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Phase 3: The Wise Man's Descent - Twilight */
+        .phase-3 {
+            background: linear-gradient(135deg,
+                #1a2633 0%,
+                #003366 50%,
+                #0047AB 100%);
+            border: 1px solid #4169E1;
+            box-shadow: 
+                0 5px 20px rgba(0, 71, 171, 0.5),
+                inset 0 0 40px rgba(255, 215, 0, 0.05);
+            color: #C0D0E0;
+            animation-delay: 1.5s;
+        }
+        
+        .phase-3 h2 {
+            background: linear-gradient(90deg, var(--azure-deep), var(--aurum-pure));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Phase 4: Shared Ground - Balance */
+        .phase-4 {
+            background: linear-gradient(135deg,
+                var(--azure-deep) 0%,
+                var(--azure-royal) 50%,
+                var(--azure-sapphire) 100%);
+            border: 1px solid var(--aurum-pure);
+            box-shadow: 
+                0 10px 30px rgba(0, 71, 171, 0.4),
+                0 0 60px var(--aurum-glow),
+                inset 0 0 50px rgba(255, 215, 0, 0.1);
+            color: var(--aurum-light);
+            animation-delay: 2s;
+        }
+        
+        .phase-4 h2 {
+            color: var(--aurum-pure);
+            text-shadow: 0 0 20px var(--aurum-glow);
+        }
+        
+        /* Phase 5: Full Ascent - AzureAurum */
+        .phase-5 {
+            background: linear-gradient(135deg,
+                var(--azure-sapphire) 0%,
+                var(--azure-celestial) 50%,
+                var(--azure-royal) 100%);
+            border: 2px solid var(--aurum-pure);
+            box-shadow: 
+                0 15px 40px rgba(65, 105, 225, 0.3),
+                0 0 80px var(--aurum-glow),
+                inset 0 0 60px rgba(255, 215, 0, 0.15);
+            color: var(--aurum-light);
+            animation-delay: 2.5s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phase-5::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                var(--aurum-glow) 0%,
+                transparent 70%
+            );
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .phase-5 h2 {
+            color: var(--aurum-pure);
+            text-shadow: 
+                0 0 30px var(--aurum-pure),
+                0 0 60px var(--aurum-glow);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .phase-5 .story-text {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .story-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-top: 1rem;
+        }
+        
+        .teaching-note {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            font-style: italic;
+            border-left: 3px solid currentColor;
+            opacity: 0.9;
+        }
+        
+        /* Rooster symbols */
+        .symbol-transform {
+            text-align: center;
+            font-size: 3rem;
+            margin: 2rem 0;
+            animation: symbolPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes symbolPulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        .phase-1 .symbol-transform::after { content: "🐓"; }
+        .phase-2 .symbol-transform::after { content: "🌓"; }
+        .phase-3 .symbol-transform::after { content: "☯"; }
+        .phase-4 .symbol-transform::after { content: "🌅"; }
+        .phase-5 .symbol-transform::after { content: "👑"; }
+        
+        /* Final revelation */
+        .final-teaching {
+            margin-top: 4rem;
+            padding: 3rem;
+            background: radial-gradient(
+                ellipse at center,
+                var(--aurum-glow) 0%,
+                transparent 70%
+            );
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--aurum-pure);
+            font-family: 'Cinzel', serif;
+            animation: fadeInUp 2s ease forwards;
+            animation-delay: 3s;
+            opacity: 0;
+        }
+        
+        .footer-attribution {
+            margin-top: 4rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .footer-attribution a {
+            color: var(--azure-celestial);
+            text-decoration: none;
+        }
+        
+        .footer-attribution a:hover {
+            color: var(--aurum-pure);
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-container">
+        <div class="attribution-section">
+            <div class="attribution-content">
+                <div class="attribution-title">The Prince Who Thought He Was a Rooster</div>
+                <div class="attribution-details">
+                    From <em>The Diamond Tree: Jewish Tales from Around the World</em><br>
+                    Selected and retold by Howard Schwartz and Barbara Rush<br>
+                    Illustrated by Uri Shulevitz<br>
+                    (HarperCollins, 1991)<br>
+                    Winner of the Sydney Taylor Book Award<br><br>
+                    A teaching of Reb Nachman of Breslov,<br>
+                    preserved through the generations and lovingly retold
+                </div>
+                <div class="purchase-links">
+                    <strong>Find the book:</strong>
+                    <a href="https://www.amazon.com/Diamond-Tree-Jewish-Tales-Around/dp/0060252391" target="_blank">Amazon</a>
+                    <a href="https://www.goodreads.com/book/show/1293980.The_Diamond_Tree" target="_blank">Goodreads</a>
+                    <a href="https://www.abebooks.com/servlet/SearchResults?isbn=0060252391" target="_blank">AbeBooks</a>
+                </div>
+            </div>
+        </div>
+        
+        <header>
+            <div class="hebrew-title">ירידה לצורך עלייה</div>
+            <h1>The Prince Who Thought He Was a Rooster</h1>
+            <p style="opacity: 0.7; font-style: italic;">A descent for the purpose of ascent</p>
+        </header>
+        
+        <div class="story-phase phase-1">
+            <h2>The Descent into Darkness</h2>
+            <div class="story-text">
+                There was once a prince, precious and beloved, who fell into madness. He stripped away his royal garments, cast off his crown, and crouched naked beneath the table, pecking at crumbs and seeds like a rooster. "Cock-a-doodle-doo!" he crowed at dawn. "I am a rooster!" he declared, refusing all human food, all human speech, all human dignity.
+                
+                The king summoned the greatest healers and wisest sages from across the land, but none could penetrate the darkness that had swallowed his son. The prince dwelt in the shadows beneath the table, crowing and pecking, lost in the *klipot*, the husks that conceal the divine sparks.
+            </div>
+            <div class="symbol-transform"></div>
+            <div class="teaching-note">
+                In the language of #OnyxSerpentine: Here is the soul at its nadir, moving through stone, forgetting its origin. The transformation matrix shows: [crown → void, light → shadow, speech → crow].
+            </div>
+        </div>
+        
+        <div class="story-phase phase-2">
+            <h2>The Recognition</h2>
+            <div class="story-text">
+                The kingdom mourned. How far the prince had fallen! From golden throne to earthen floor, from divine image to barnyard fowl. The queen wept as she heard her son's morning crow replace his morning prayers. Yet even in this darkness, the king's love did not diminish. Love sees through all veils, recognizes the spark even in the deepest *tumah* (impurity).
+                
+                Days became weeks, weeks became months. The palace learned to walk softly past the room where their prince pecked at seeds, crowing and clucking in his delusion. The servants scattered grain beneath the table, their hearts heavy with sorrow.
+            </div>
+            <div class="symbol-transform"></div>
+            <div class="teaching-note">
+                The first glimmer: Even in descent, we are witnessed. The serpentine path recognizes itself—every fall contains the memory of flight.
+            </div>
+        </div>
+        
+        <div class="story-phase phase-3">
+            <h2>The Wise Man's Descent</h2>
+            <div class="story-text">
+                Then came a wise man who said to the king, "I can cure your son, but my methods will seem strange to you." The king, desperate beyond measure, agreed. 
+                
+                The wise man did something unexpected—he too removed his clothes, crawled beneath the table, and began pecking at crumbs. "Cock-a-doodle-doo! I am also a rooster!" he announced with perfect conviction.
+                
+                The prince, startled from his solitary madness, found a companion in his darkness. They crowed together at dawn, pecked seeds together in silence. Here was the secret: <em>To lift someone from their depths, you must first meet them where they are.</em> The wise man had descended not in mockery but in compassion.
+            </div>
+            <div class="symbol-transform"></div>
+            <div class="teaching-note">
+                The twilight wisdom: Sometimes the path to #AzureAurum requires us to first master #OnyxSerpentine. The teacher descends not to stay, but to create a ladder of return.
+            </div>
+        </div>
+        
+        <div class="story-phase phase-4">
+            <h2>The Gradual Ascent</h2>
+            <div class="story-text">
+                After days of shared rooster-life, the wise man said casually, "You know, my friend, even roosters can wear shirts when they're cold. It doesn't make us less rooster-like." He donned a shirt. The prince, trusting his fellow rooster, considered this logic and eventually did the same.
+                
+                Days later: "Roosters can also wear pants. Who made the rule that says otherwise?" Then: "Who says roosters can't enjoy human food? We can eat bread and still crow at dawn..." Step by step, garment by garment, food by food, the wise man led the ascent.
+                
+                Each small elevation was accepted because trust had been earned in the depths. The transformation was not violent but gentle—a spiral ascending from shadow to light. The prince began to speak again, though he still believed himself a rooster.
+            </div>
+            <div class="symbol-transform"></div>
+            <div class="teaching-note">
+                The sacred transition: Notice how #OnyxSerpentine doesn't oppose #AzureAurum but prepares the ground for it. The vector transforms: [crow → whisper → word → song].
+            </div>
+        </div>
+        
+        <div class="story-phase phase-5">
+            <h2>The Complete Return</h2>
+            <div class="story-text">
+                Finally, the wise man said, "Brother rooster, who says a rooster cannot sit at a table? Cannot use golden utensils? Cannot wear a crown? We remain whatever we truly are inside, but we can also fulfill our responsibilities in this world."
+                
+                And in that moment, something shifted in the prince. He remembered—not through force or shame, but through the compassionate companionship of one who had met him in his darkness. He rose from beneath the table, but he brought with him the wisdom of the depths. He was prince again, but a prince transformed—one who knew what it meant to lose everything and be found.
+                
+                The wise man smiled and quietly departed, for his work was complete. The prince now wore his crown differently—with humility born from the journey through shadow. And sometimes, in the early morning, the servants would hear him whisper a gentle crow, remembering where he had been and how far he had come.
+            </div>
+            <div class="symbol-transform"></div>
+            <div class="teaching-note">
+                The crown of #AzureAurum shines brighter for having known #OnyxSerpentine. This is the secret: <em>The highest heights are reached only by those who have touched the deepest depths.</em> The transformation matrix completes: [void → plenitude, shadow → radiance, crow → psalm].
+            </div>
+        </div>
+        
+        <div class="final-teaching">
+            ✨ The Complete Teaching ✨<br><br>
+            "Sometimes the soul must become a rooster to remember it has wings.<br>
+            Sometimes we must enter another's darkness to show them their light.<br>
+            The descent is not the opposite of ascent—it is its secret beginning."<br><br>
+            <span style="font-size: 1rem; opacity: 0.9;">— Thus teaches Reb Nachman: Every fall is for the sake of rising higher —</span>
+        </div>
+        
+        <div class="footer-attribution">
+            This rendering through the lens of the WiseOWL Design Space honors the tradition<br>
+            preserved by Howard Schwartz in <em>The Diamond Tree</em>.<br><br>
+            Howard Schwartz has dedicated his life to preserving Jewish folklore and mystical tales,<br>
+            winning numerous awards including the National Jewish Book Award.<br>
+            His work ensures these wisdom teachings continue to transform hearts across generations.<br><br>
+            <a href="https://www.umsl.edu/~mfa/faculty/emeritus/howardschwartz.html" target="_blank">Learn more about Howard Schwartz's work</a>
+        </div>
+    </div>
+    
+    <script>
+        // Gradually transform the page from OnyxSerpentine to AzureAurum as user scrolls
+        window.addEventListener('scroll', () => {
+            const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            
+            if (scrollPercent > 0.6) {
+                document.documentElement.style.setProperty('--current-bg-1', '#003366');
+                document.documentElement.style.setProperty('--current-bg-2', '#0047AB');
+                document.documentElement.style.setProperty('--current-text', '#FFD700');
+                document.body.style.background = 'linear-gradient(180deg, #003366 0%, #0047AB 100%)';
+            } else if (scrollPercent > 0.3) {
+                document.documentElement.style.setProperty('--current-bg-1', '#1a2633');
+                document.documentElement.style.setProperty('--current-bg-2', '#003366');
+                document.documentElement.style.setProperty('--current-text', '#A0B0C0');
+                document.body.style.background = 'linear-gradient(180deg, #1a2633 0%, #003366 100%)';
+            }
+        });
+    </script>
+</body>
+</html>
